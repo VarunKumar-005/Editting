@@ -1,1 +1,98 @@
-<!--  I need the html herte to be upated by jules>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn To Earn</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-apple-light text-apple-dark dark:bg-apple-dark dark:text-apple-light">
+    <div id="app" class="min-h-screen relative overflow-x-hidden text-apple-dark dark:text-apple-light transition-colors duration-500">
+        <header id="navbar-container">
+            <nav class="bg-apple-light/80 backdrop-blur-md fixed w-full z-40 top-0 border-b border-apple-light dark:bg-apple-dark/80 dark:border-gray-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex-shrink-0">
+                            <a href="#" data-page="feed" class="flex items-center space-x-3 group nav-link">
+                                <div class="w-10 h-10 bg-apple-blue rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-lg font-space">L2E</span>
+                                </div>
+                                <span class="text-xl font-bold text-black dark:text-white font-poppins select-text">Learn2Earn</span>
+                            </a>
+                        </div>
+                        <div class="hidden md:flex items-center space-x-4">
+                            <button data-page="feed" class="nav-link px-4 py-2 rounded-lg transition-colors font-medium">Feed</button>
+                            <button data-page="bookmarks" class="nav-link px-4 py-2 rounded-lg transition-colors font-medium">My Bookmarks</button>
+                            <button data-page="scheduler" class="nav-link px-4 py-2 rounded-lg transition-colors font-medium">AI Scheduler</button>
+                            <button data-page="studyPlan" class="nav-link px-4 py-2 rounded-lg transition-colors font-medium">My Study Plan</button>
+                            <div class="w-px h-6 bg-gray-300 dark:bg-gray-600"></div>
+                            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <svg id="theme-toggle-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main-content" class="relative z-10 container mx-auto px-4 py-8 mt-16">
+            <!-- Page content will be rendered here -->
+        </main>
+
+        <footer id="footer-container">
+            <footer class="mt-20 border-t border-gray-200/80 dark:border-gray-800">
+                <div class="max-w-7xl mx-auto px-4 py-12">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center space-x-3 mb-6">
+                            <div class="w-12 h-12 bg-apple-blue rounded-xl flex items-center justify-center">
+                                <span class="text-white font-bold text-xl font-space">L2E</span>
+                            </div>
+                            <span class="text-2xl font-bold text-black dark:text-white font-poppins">Learn2Earn</span>
+                        </div>
+                        <p class="text-apple-gray dark:text-gray-400 mb-6 font-inter">
+                            Making career decisions easier with interactive comparisons and personalized suggestions.
+                        </p>
+                        <div class="text-apple-gray dark:text-gray-500 text-sm font-inter">
+                            © 2025 Learn2Earn Pro. All rights reserved. | Data updated: September 2025
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </footer>
+
+        <div id="chatbot-container">
+            <button
+                id="chatbot-toggle"
+                class="fixed bottom-6 right-6 bg-apple-blue text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:bg-blue-600 z-50 transition-all duration-300 ease-out"
+                aria-label="Open AI Career Counselor"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V5z" /><path d="M16 14H8.333a1 1 0 00-.786.375l-2.11 2.637A1 1 0 014.28 16H4a2 2 0 01-2-2v-1a1 1 0 011-1h12a1 1 0 110 2z" /></svg>
+            </button>
+
+            <div id="chatbot-window" class="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 transition-all duration-300 ease-out origin-bottom-right opacity-0 scale-95 pointer-events-none">
+                <div class="bg-white dark:bg-gray-800 w-full h-[85vh] sm:w-[380px] sm:h-[70vh] sm:max-h-[650px] rounded-t-2xl sm:rounded-2xl shadow-xl flex flex-col border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 flex-shrink-0">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-apple-blue rounded-full flex items-center justify-center text-white font-bold text-lg font-space">AI</div>
+                            <div>
+                                <h2 class="font-bold font-poppins text-lg dark:text-white">AI Career Counselor</h2>
+                                <p class="text-sm text-apple-gray dark:text-gray-400">Learn2Earn</p>
+                            </div>
+                        </div>
+                        <button id="chatbot-close" class="text-apple-gray hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors" aria-label="Close chat"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></button>
+                    </div>
+                    <div id="chatbot-messages" class="flex-1 p-4 overflow-y-auto space-y-4 flex flex-col"></div>
+                    <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
+                        <form id="chatbot-form" class="flex items-center gap-3">
+                            <input type="text" id="chat-input" placeholder="Ask about a career path..." class="flex-1 p-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 dark:text-white rounded-lg focus:ring-2 focus:ring-apple-blue focus:border-apple-blue transition" autocomplete="off" />
+                            <button type="submit" id="chat-submit" class="bg-apple-blue text-white rounded-lg p-3 disabled:opacity-50"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
